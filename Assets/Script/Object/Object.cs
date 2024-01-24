@@ -5,6 +5,9 @@ using UnityEngine;
 public class Object : MonoBehaviour
 {
     public SpriteRenderer Render;
+    public Sprite Water;
+    public Sprite Oil;
+
     public static Object instance;
 
     private Rigidbody2D ObjectRigid;
@@ -14,10 +17,8 @@ public class Object : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         //Type=0 일 때 object 크기 랜덤
-        float size = Random.Range(0.5f, 1.0f);
+        float size = Random.Range(0.15f, 0.3f);
         transform.localScale = new Vector3(size, size, 1);
 
         //x축 -3~3 까지 랜덤 위치 생성
@@ -28,14 +29,16 @@ public class Object : MonoBehaviour
         ObjectRigid = GetComponent<Rigidbody2D>();
         float speed = Random.Range(0.5f, 4.0f);
         ObjectRigid.drag = speed;
+        Render.sprite = Water;
 
-        //object 색상 변경 및 타입 변경
+        //object 이미지 변경 및 타입 변경
         int color = Random.Range(0, 101);
         if (color <= 10)
         {
-            Render.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+            Render.sprite = Oil;
             Type = 1;
-            transform.localScale = new Vector3(0.5f, 0.5f, 1);
+            transform.localScale = new Vector3(0.2f, 0.2f, 1);
+            Render.color = new Color(1f, 1f, 1f, 1f);
         }
     }
 

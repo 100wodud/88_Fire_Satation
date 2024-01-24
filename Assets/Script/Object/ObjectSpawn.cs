@@ -8,7 +8,7 @@ public class ObjectSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("MakeObject", 0.0f, 0.5f);
+        InvokeRepeating("MakeObject", 0.3f, 0.2f);
     }
 
     void MakeObject()

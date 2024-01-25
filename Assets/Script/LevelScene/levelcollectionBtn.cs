@@ -19,6 +19,6 @@ public class levelcollectionBtn : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("TestScene");
     }
 }

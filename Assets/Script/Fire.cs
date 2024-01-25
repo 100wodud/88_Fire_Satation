@@ -7,8 +7,8 @@ public class Fire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float x = -0.5f;
-        float y = 8f;
+        float x = -1f;
+        float y = 5f;
         transform.position = new Vector3(x, y, 0);
     }
 

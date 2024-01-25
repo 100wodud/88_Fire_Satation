@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Screan
   - Ground
+  - Object
+  - Water
   layers:
   - Default
   - TransparentFX

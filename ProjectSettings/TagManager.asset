@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Object
   - Water
+  - Oil
   layers:
   - Default
   - TransparentFX

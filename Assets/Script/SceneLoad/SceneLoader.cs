@@ -14,6 +14,5 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("CharacterScene", LoadSceneMode.Additive);
         SceneManager.LoadScene("ObjectScene",LoadSceneMode.Additive);
-        SceneManager.LoadScene("FireScene", LoadSceneMode.Additive);
     }
 }

@@ -43,6 +43,7 @@ public class Object : MonoBehaviour
             Type = 1;
             transform.localScale = new Vector3(0.2f, 0.2f, 1);
             Render.color = new Color(1f, 1f, 1f, 1f);
+            gameObject.tag = "Oil"; 
         }
         else if (color <= 20)
         {

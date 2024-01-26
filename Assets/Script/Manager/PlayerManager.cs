@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public GameObject waterFront;
     public static PlayerManager I;
+    private RectTransform rect;
     float water = 0;
     void Awake()
     {
@@ -13,7 +14,8 @@ public class PlayerManager : MonoBehaviour
     }
     void Start()
     {
-        
+
+        rect = waterFront.GetComponent<RectTransform>();
     }
     void Update()
     {
@@ -24,7 +26,8 @@ public class PlayerManager : MonoBehaviour
         if (water < 7)
         {
             water += 0.5f;
-            waterFront.transform.localScale = new Vector3(water, 1.0f, 1.0f);
+            rect.sizeDelta = new Vector2(water, rect.sizeDelta.y);
+            Debug.Log(rect.sizeDelta.x);
         }
         else { water = 0; }
 

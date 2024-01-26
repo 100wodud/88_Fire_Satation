@@ -8,8 +8,8 @@ public class Object : MonoBehaviour
     public Sprite Water;
     public Sprite Oil;
 
+    public ParticleSystem particleObject;
     public static Object instance;
-    public Animator anim;
     private Rigidbody2D ObjectRigid;
 
     //object 기본값
@@ -43,7 +43,11 @@ public class Object : MonoBehaviour
             Type = 1;
             transform.localScale = new Vector3(0.2f, 0.2f, 1);
             Render.color = new Color(1f, 1f, 1f, 1f);
-            gameObject.tag = "Oil"; 
+            gameObject.tag = "Oil";
+
+            //파티클 색상 변경
+            ParticleSystem.MainModule main = GetComponent<ParticleSystem>().main;
+            main.startColor = Color.black;
         }
         else if (color <= 20)
         {
@@ -82,9 +86,15 @@ public class Object : MonoBehaviour
             {
 
             }
-            Destroy(gameObject);
+            particleObject.Play();
+            Render.color = new Color(1f, 1f, 1f, 0f);
+            Invoke("DestroyObject", 0.5f);
 
         }
     }
 
+    void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
 }

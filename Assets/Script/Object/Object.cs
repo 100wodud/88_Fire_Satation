@@ -55,7 +55,7 @@ public class Object : MonoBehaviour
         //플레이어와 닿을시 메서드
         if (collision.gameObject.tag == "Player")
         {
-            if(Type == 0) Destroy(gameObject);
+            Destroy(gameObject);
         }
 
         // 게임 구역을 나가는 경우, 제거

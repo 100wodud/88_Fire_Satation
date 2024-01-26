@@ -31,7 +31,7 @@ public class Object : MonoBehaviour
 
         //object 속도 조절
         ObjectRigid = GetComponent<Rigidbody2D>();
-        speed = Random.Range(0.5f, 4.0f);
+        speed = Random.Range(1f, 4.0f) - ObjectSpawn.AddSpeed;
         ObjectRigid.drag = speed;
         Render.sprite = Water;
 
@@ -46,10 +46,9 @@ public class Object : MonoBehaviour
         }
         else if (color <= 20)
         {
-            Render.sprite = Oil;
             Type = 2;
             transform.localScale = new Vector3(0.2f, 0.2f, 1);
-            Render.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+            Render.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
     }
 
@@ -68,7 +67,11 @@ public class Object : MonoBehaviour
         {
             if (Type == 0) Destroy(gameObject);
             if (Type == 1) Destroy(gameObject);
-            if (Type == 2) Destroy(gameObject);
+            if (Type == 2)
+            {
+                ObjectSpawn.AddSpeed += 1f;
+                Destroy(gameObject);
+            }
         }
 
         // 게임 구역을 나가는 경우, 제거

@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         else if (coll.gameObject.tag == "Oil")
         {
             PlayerManager.I.waterMinus();
+            Debug.Log("기름만남");
         }
     }
 }

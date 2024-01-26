@@ -17,8 +17,8 @@ public class levelcollectionBtn : MonoBehaviour
 
     }
 
-    public void startGame()
+    public void ChangeScene(string scene_name)
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene(scene_name);
     }
 }

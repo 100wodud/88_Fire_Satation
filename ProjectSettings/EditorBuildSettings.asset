@@ -18,9 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScene.unity
     guid: e7e26e7bbb8d81c4daff01b309de6f5b
   - enabled: 1
-    path: Assets/Scenes/SuccessScene.unity
-    guid: ab61dc9ae2c7924488430f6f894c3917
+    path: Assets/Scenes/CharacterScene.unity
+    guid: 8b37b739bc1459c4ab6f6f9238e94e17
   - enabled: 1
-    path: Assets/Scenes/FailScene.unity
+    path: Assets/Scenes/DefeatScene.unity
     guid: aaf0cc8bf5cafaa4cb1b431716e92f6c
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: ab61dc9ae2c7924488430f6f894c3917
   m_configObjects: {}

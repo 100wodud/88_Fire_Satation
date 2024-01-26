@@ -1,26 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ObjectSpawn : MonoBehaviour
+public class levelcollectionBtn : MonoBehaviour
 {
-    public GameObject Object;
-    public static float AddSpeed = 0f;
-
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("MakeObject", 0.3f, 1f);
-    }
 
-    void MakeObject()
-    {
-        Instantiate(Object);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void ChangeScene(string scene_name)
+    {
+        SceneManager.LoadScene(scene_name);
     }
 }

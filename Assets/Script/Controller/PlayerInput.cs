@@ -1,10 +1,9 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInput : CharacterController
+public class PlayerInput : UserController
 {
     public void OnMove(InputValue value)
     {

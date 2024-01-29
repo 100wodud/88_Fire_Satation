@@ -22,9 +22,9 @@ public class Fire : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // 플레이어와 닿을 시 패배
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("DefeatScene");
+            GameManager.Instance.GameOver();
         }
     }
 }

@@ -78,22 +78,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ½Ì±ÛÅæ ÆÐÅÏ »ç¿ë
-    #region singleton
-    private static GameManager _instance;
-    public static GameManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<GameManager>();
-            }
-            return _instance;
-        }
-    }
-    #endregion
-
     public void GameOver()
     {
         SceneManager.LoadScene("DefeatScene");

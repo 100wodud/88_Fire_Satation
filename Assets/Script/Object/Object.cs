@@ -88,7 +88,10 @@ public class Object : MonoBehaviour
             }
             particleObject.Play();
             Render.color = new Color(1f, 1f, 1f, 0f);
+            gameObject.tag = "Untagged";
             Invoke("DestroyObject", 0.5f);
+
+            Debug.Log(GameManager.I.GameLevel);
 
         }
     }

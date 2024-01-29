@@ -23,23 +23,26 @@ public class PlayerManager : MonoBehaviour
     }
     public void waterGauge() //물 게이지 추가
     {
-        if (water < 7)
+        if (water < 6)
         {
             water += 0.5f;
-            rect.sizeDelta = new Vector2(water, rect.sizeDelta.y);
-            Debug.Log(rect.sizeDelta.x);
         }
-        else { water = 0; }
-
+        else if(water == 6)
+        {
+            water = 0; 
+        }
+        rect.sizeDelta = new Vector2(water, rect.sizeDelta.y);
     }
     public void waterMinus() //물 게이지 마이너스
     {
         if (water > 0)
         {
             water -= 0.5f;
-            waterFront.transform.localScale = new Vector3(water, 1.0f, 1.0f);
         }
-        else { water = 0; }
-
+        else if( water == 0)
+        {
+            water = 0; 
+        }
+        rect.sizeDelta = new Vector2(water, rect.sizeDelta.y);
     }
 }

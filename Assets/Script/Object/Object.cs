@@ -92,8 +92,6 @@ public class Object : MonoBehaviour
             gameObject.tag = "Untagged";
             Invoke("DestroyObject", 0.5f);
 
-            Debug.Log(GameManager.I.GameLevel);
-
         }
     }
 

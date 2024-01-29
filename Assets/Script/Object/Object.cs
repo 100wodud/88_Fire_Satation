@@ -17,6 +17,7 @@ public class Object : MonoBehaviour
     float size = 0.3f;
     float x = 0;
     float speed = 1f;
+    int timeLevel = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +36,24 @@ public class Object : MonoBehaviour
         ObjectRigid.drag = speed;
         Render.sprite = Water;
 
+        // 무한모드 20초마다 oil 수 증가
+        timeLevel = (int)(GameManager.I.time / 20);
         //object 이미지 변경 및 타입 변경
-        int color = Random.Range(0, 101);
+        int color = 99;
+        if(GameManager.I.GameLevel == 1 )
+        {
+            color = Random.Range(0, 101);
+        } else if (GameManager.I.GameLevel == 2 )
+        {
+            // 시간에 따라서 증가
+            int range = 101 - (timeLevel * 3);
+            if(range < 20)
+            {
+                range = 20;
+            }
+            color = Random.Range(0, range);
+        }
+
         if (color <= 10)
         {
             Render.sprite = Oil;

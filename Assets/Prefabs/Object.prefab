@@ -167,9 +167,6 @@ MonoBehaviour:
   Water: {fileID: 21300000, guid: 96f8905d7c0054e4093bffc55f2ea490, type: 3}
   Oil: {fileID: 21300000, guid: e5047e5592e62b24da6f645733c9fed0, type: 3}
   particleObject: {fileID: 1792278223229843492}
-  Item: {fileID: 6888453564508595659, guid: 393b25850f326ff488e27756a17dff2e, type: 3}
-  Obj: {fileID: 1692397463935388860}
-  Fire: {fileID: 0}
   Type: 0
 --- !u!198 &1792278223229843492
 ParticleSystem:

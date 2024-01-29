@@ -6,11 +6,14 @@ public class ObjectSpawn : MonoBehaviour
 {
     public GameObject Object;
     public static float AddSpeed = 0f;
+    int timeLevel = 0;
+    AudioSource audioSoure;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("MakeObject", 0.3f, 1f);
+        InvokeRepeating("MakeObject", 0.15f, 1f);
+
     }
 
     void MakeObject()
@@ -21,6 +24,14 @@ public class ObjectSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // 20초 마다 효과음
+        if ((int)(GameManager.I.time / 20) > timeLevel & GameManager.I.GameLevel == 2)
+        {
+            timeLevel = (int)(GameManager.I.time / 20);
+            audioSoure = GetComponent<AudioSource>();
+            audioSoure.Play();
+            Debug.Log(timeLevel);
+        }
+
     }
 }

@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager I;
     private RectTransform rect;
     float water = 0;
+    int gauge = 0;
+
     void Awake()
     {
         I = this;
@@ -20,7 +22,19 @@ public class PlayerManager : MonoBehaviour
     }
     void Update()
     {
-
+        if(GameManager.I.GameLevel == 0)
+        {
+            if(gauge >= 5)
+            {
+                SceneManager.LoadScene("VictoryScene");
+            }
+        }else if (GameManager.I.GameLevel == 1)
+        {
+            if(gauge >= 10)
+            {
+                SceneManager.LoadScene("VictoryScene");
+            }
+        }
     }
     public void waterGauge() //물 게이지 추가
     {
@@ -30,7 +44,8 @@ public class PlayerManager : MonoBehaviour
         }
         else if(water == 6)
         {
-            water = 0; 
+            water = 0;
+            gauge += 1;
         }
         rect.sizeDelta = new Vector2(water, rect.sizeDelta.y);
     }
@@ -45,23 +60,5 @@ public class PlayerManager : MonoBehaviour
             water = 0; 
         }
         rect.sizeDelta = new Vector2(water, rect.sizeDelta.y);
-    }
-
-    public void GameLevelChange(int game_level)
-    {
-        if (game_level == 0) // easy 일때
-        {
-            if (water == 5) 
-            {
-                SceneManager.LoadScene("VictoryScene");
-            }
-        }
-        else if (game_level == 1) // normal 일때
-        {
-            if (water == 10)
-            {
-                SceneManager.LoadScene("VictoryScene");
-            }
-        }
     }
 }

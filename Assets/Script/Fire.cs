@@ -24,7 +24,7 @@ public class Fire : MonoBehaviour
         // 플레이어와 닿을 시 패배
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.GameOver();
+            GameManager.I.GameOver();
         }
     }
 }

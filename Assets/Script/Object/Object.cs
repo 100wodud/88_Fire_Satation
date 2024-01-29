@@ -54,7 +54,12 @@ public class Object : MonoBehaviour
             color = Random.Range(0, range);
         }
 
-        if (color <= 10)
+        if (color <= 1 & GameManager.I.GameLevel == 2)
+        {
+            Type = 2;
+            transform.localScale = new Vector3(0.2f, 0.2f, 1);
+            Render.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        } else if (color <= 10)
         {
             Render.sprite = Oil;
             Type = 1;
@@ -65,12 +70,6 @@ public class Object : MonoBehaviour
             //파티클 색상 변경
             ParticleSystem.MainModule main = GetComponent<ParticleSystem>().main;
             main.startColor = Color.black;
-        }
-        else if (color <= 20)
-        {
-            Type = 2;
-            transform.localScale = new Vector3(0.2f, 0.2f, 1);
-            Render.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
     }
 

@@ -76,6 +76,7 @@ public class Object : MonoBehaviour
             {
                 ObjectSpawn.AddSpeed += 1f;
                 Destroy(gameObject);
+                GameManager.I.StopTimer();
             }
         }
 

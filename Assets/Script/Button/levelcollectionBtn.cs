@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,5 +22,9 @@ public class levelcollectionBtn : MonoBehaviour
     public void ChangeScene(string scene_name)
     {
         SceneManager.LoadScene(scene_name);
+    }
+    public void ChangeGameLevel(int gmae_level)
+    {
+        GameManager.I.GameLevelChange(gmae_level);
     }
 }

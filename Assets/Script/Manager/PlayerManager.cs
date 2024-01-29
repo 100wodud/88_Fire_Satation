@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -44,5 +45,23 @@ public class PlayerManager : MonoBehaviour
             water = 0; 
         }
         rect.sizeDelta = new Vector2(water, rect.sizeDelta.y);
+    }
+
+    public void GameLevelChange(int game_level)
+    {
+        if (game_level == 0) // easy 일때
+        {
+            if (water == 5) 
+            {
+                SceneManager.LoadScene("VictoryScene");
+            }
+        }
+        else if (game_level == 1) // normal 일때
+        {
+            if (water == 10)
+            {
+                SceneManager.LoadScene("VictoryScene");
+            }
+        }
     }
 }

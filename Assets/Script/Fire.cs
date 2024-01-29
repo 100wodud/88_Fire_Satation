@@ -18,4 +18,13 @@ public class Fire : MonoBehaviour
     {
         transform.position += new Vector3(0, -0.001f, 0);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 플레이어와 닿을 시 패배
+        if (collision.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("DefeatScene");
+        }
+    }
 }

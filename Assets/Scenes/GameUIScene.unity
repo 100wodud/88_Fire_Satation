@@ -317,9 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda8e78e23222a04d9705ab536b2cc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Count: {fileID: 846354299}
-  Mode: {fileID: 963729447}
-  Time: {fileID: 477768555}
+  Count: {fileID: 0}
+  Mode: {fileID: 0}
+  Time: {fileID: 0}
 --- !u!114 &846354301
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ public class Object : MonoBehaviour
         } else if (GameManager.I.GameLevel == 2 )
         {
             // 시간에 따라서 증가
-            int range = 101 - (timeLevel * 3);
+            int range = 101 - (timeLevel * 2);
             if(range < 20)
             {
                 range = 20;
@@ -54,7 +54,7 @@ public class Object : MonoBehaviour
             color = Random.Range(0, range);
         }
 
-        if (color <= 1 & GameManager.I.GameLevel == 2)
+        if (color <= 2 & GameManager.I.GameLevel == 2)
         {
             // 즉사 물방울
             Type = 2;

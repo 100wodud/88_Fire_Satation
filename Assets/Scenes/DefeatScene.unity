@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 557763410}
   - component: {fileID: 557763412}
   - component: {fileID: 557763411}
+  - component: {fileID: 557763413}
   m_Layer: 5
   m_Name: time
   m_TagString: Untagged
@@ -442,6 +443,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557763409}
   m_CullTransparentMesh: 1
+--- !u!114 &557763413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557763409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2fd0e5d1a3b3240be82ce9e9ae71ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameLevel: 1
+  time: 0
+  timerSet: 0
+  EasyTime: 0
+  NormalTime: 0
+  HardTime: 0
 --- !u!1 &588369413
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +473,7 @@ GameObject:
   - component: {fileID: 588369416}
   - component: {fileID: 588369415}
   m_Layer: 5
-  m_Name: time (1)
+  m_Name: bestscore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +975,7 @@ GameObject:
   - component: {fileID: 1723818753}
   - component: {fileID: 1723818752}
   m_Layer: 5
-  m_Name: thisscore (1)
+  m_Name: thisscore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,6 +1055,7 @@ GameObject:
   - component: {fileID: 1898966034}
   - component: {fileID: 1898966036}
   - component: {fileID: 1898966035}
+  - component: {fileID: 1898966037}
   m_Layer: 5
   m_Name: score (1)
   m_TagString: Untagged
@@ -1107,3 +1127,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898966033}
   m_CullTransparentMesh: 1
+--- !u!114 &1898966037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898966033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2fd0e5d1a3b3240be82ce9e9ae71ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameLevel: 1
+  time: 0
+  timerSet: 0
+  EasyTime: 0
+  NormalTime: 0
+  HardTime: 0

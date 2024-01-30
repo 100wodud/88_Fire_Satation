@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
     private Vector2 _movementDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
+    public int speed = 5;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class Movement : MonoBehaviour
 
     private void ApplyMovment(Vector2 direction)
     {
-        direction = direction * 5;
+        direction = direction * speed;
 
         _rigidbody.velocity = direction;
     }

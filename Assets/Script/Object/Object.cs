@@ -90,24 +90,18 @@ public class Object : MonoBehaviour
             if (Type == 1) Destroy(gameObject);
             if (Type == 2)
             {
-                ObjectSpawn.AddSpeed += 1f;
                 Destroy(gameObject);
-                GameManager.I.StopTimer();
+                GameManager.I.GameOver();
             }
         }
 
         // 게임 구역을 나가는 경우, 제거
         if (collision.gameObject.tag == "Ground")
         {
-            if (Type == 2)
-            {
-
-            }
             particleObject.Play();
             Render.color = new Color(1f, 1f, 1f, 0f);
             gameObject.tag = "Untagged";
             Invoke("DestroyObject", 0.5f);
-
         }
     }
 

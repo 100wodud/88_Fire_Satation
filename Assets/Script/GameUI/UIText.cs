@@ -9,31 +9,37 @@ public class UIText : MonoBehaviour
     public Text Mode;
     public Text Time;
     string n = "5";
+    int count = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(GameManager.I.GameLevel == 0)
+        if (Mode != null)
         {
-            Mode.text = "Easy Mode";
-            n = "5";
-        } else if(GameManager.I.GameLevel == 1)
-        {
-            Mode.text = "Normal Mode";
-            n = "10";
-        } else
-        {
-            Mode.text = "Hard Mode";
-            n = "¡Ä";
+            if (GameManager.I.GameLevel == 0)
+            {
+                Mode.text = "Easy Mode";
+                n = "5";
+            }
+            else if (GameManager.I.GameLevel == 1)
+            {
+                Mode.text = "Normal Mode";
+                n = "10";
+            }
+            else
+            {
+                Mode.text = "Hard Mode";
+                n = "¡Ä";
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        int count = PlayerManager.I.gauge;
-        Count.text = count.ToString() + " / " + n;
-        Time.text = GameManager.I.time.ToString("N2");
+        count = PlayerManager.I.gauge;
+        if (Count != null) Count.text = count.ToString() + " / " + n;
+        if (Time != null) Time.text = GameManager.I.time.ToString("N2");
 
         
     }

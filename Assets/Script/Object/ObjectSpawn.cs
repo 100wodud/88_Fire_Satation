@@ -25,9 +25,9 @@ public class ObjectSpawn : MonoBehaviour
     void Update()
     {
         // 20초 마다 효과음
-        if ((int)(GameManager.I.time / 20) > timeLevel & GameManager.I.GameLevel == 2)
+        if ((int)(GameManager.I.time / 10) > timeLevel & GameManager.I.GameLevel == 2)
         {
-            timeLevel = (int)(GameManager.I.time / 20);
+            timeLevel = (int)(GameManager.I.time / 10);
             audioSoure = GetComponent<AudioSource>();
             audioSoure.Play();
             Debug.Log(timeLevel);

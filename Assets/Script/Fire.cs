@@ -27,9 +27,11 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((int)(GameManager.I.time / 20) > addSpeed & GameManager.I.GameLevel == 2)
+        if ((int)(GameManager.I.time / 10) > addSpeed & GameManager.I.GameLevel == 2)
         {
-            addSpeed = (int)(GameManager.I.time / 20) * -0.00005f;
+            //addSpeed = (int)(GameManager.I.time / 10) * -0.00005f;
+            //Å×½ºÆ®
+            addSpeed = (int)(GameManager.I.time / 10) * -0.01f;
         }
         transform.position += new Vector3(0, speed + addSpeed, 0);
 

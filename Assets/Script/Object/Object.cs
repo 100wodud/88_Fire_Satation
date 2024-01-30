@@ -56,11 +56,13 @@ public class Object : MonoBehaviour
 
         if (color <= 1 & GameManager.I.GameLevel == 2)
         {
+            // 즉사 물방울
             Type = 2;
             transform.localScale = new Vector3(0.2f, 0.2f, 1);
-            Render.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            Render.color = new Color(1f, 0f, 0f, 0.5f);
         } else if (color <= 10)
         {
+            // 오일 물방울
             Render.sprite = Oil;
             Type = 1;
             transform.localScale = new Vector3(0.2f, 0.2f, 1);
@@ -72,14 +74,6 @@ public class Object : MonoBehaviour
             main.startColor = Color.black;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

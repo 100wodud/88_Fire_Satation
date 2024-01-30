@@ -27,7 +27,6 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerManager.I.gauge);
         if ((int)(GameManager.I.time / 20) > addSpeed & GameManager.I.GameLevel == 2)
         {
             addSpeed = (int)(GameManager.I.time / 20) * -0.00005f;
@@ -36,7 +35,6 @@ public class Fire : MonoBehaviour
 
         if(PlayerManager.I.gauge > gauge)
         {
-            Debug.Log("¾÷");
             gauge = PlayerManager.I.gauge;
             transform.position += new Vector3(0, 0.1f, 0);
 

@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        StopTimer();
         SceneManager.LoadScene("DefeatScene");
     }
 }

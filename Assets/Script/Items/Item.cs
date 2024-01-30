@@ -33,6 +33,10 @@ public class Item : MonoBehaviour
             Render.sprite = SpeedUp;
             Type = 0;
         }
+        else if(effect <= 5)
+        {
+            DestroyObject();
+        }
         DestroyAfterTime();
     }
 

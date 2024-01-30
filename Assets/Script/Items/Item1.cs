@@ -46,7 +46,7 @@ public class Item1 : MonoBehaviour
         //아이템이 작동한다
         GameObject playerObject = GameObject.Find("Player");
         Movement _movement = playerObject.GetComponent<Movement>();
-        _movement.speed -= (int)0.8f;
+        _movement.speed += (int)-1f;
 
         DestroyObject();
     }

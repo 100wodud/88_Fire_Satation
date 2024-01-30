@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject waterFront;
     public static PlayerManager I;
     private RectTransform rect;
-    float water = 0;
+    public float water = 0;
     int gauge = 0;
 
     void Awake()
@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
         {
             water += 0.5f;
         }
-        else if(water == 6)
+        else if(water >= 6)
         {
             water = 0;
             gauge += 1;

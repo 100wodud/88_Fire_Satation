@@ -7,6 +7,7 @@ public class Fire : MonoBehaviour
 {
     float speed = -0.0002f;
     float addSpeed = 0;
+    int gauge = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +27,20 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(PlayerManager.I.gauge);
         if ((int)(GameManager.I.time / 20) > addSpeed & GameManager.I.GameLevel == 2)
         {
             addSpeed = (int)(GameManager.I.time / 20) * -0.00005f;
         }
         transform.position += new Vector3(0, speed + addSpeed, 0);
+
+        if(PlayerManager.I.gauge > gauge)
+        {
+            Debug.Log("¾÷");
+            gauge = PlayerManager.I.gauge;
+            transform.position += new Vector3(0, 0.1f, 0);
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

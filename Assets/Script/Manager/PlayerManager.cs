@@ -24,14 +24,16 @@ public class PlayerManager : MonoBehaviour
     {
         if(GameManager.I.GameLevel == 0)
         {
-            if(gauge >= 5)
+            if(gauge >= 2)
             {
+                GameManager.I.StopTimer();
                 SceneManager.LoadScene("VictoryScene");
             }
         }else if (GameManager.I.GameLevel == 1)
         {
-            if(gauge >= 10)
+            if(gauge >= 4)
             {
+                GameManager.I.StopTimer();
                 SceneManager.LoadScene("VictoryScene");
             }
         }

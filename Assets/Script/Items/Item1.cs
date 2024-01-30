@@ -18,6 +18,7 @@ public class Item1 : MonoBehaviour
 
     public void DestroyObject()
     {
+
         Destroy(gameObject);
     }
 
@@ -34,7 +35,7 @@ public class Item1 : MonoBehaviour
             Type = 1;
         }
         //false 값 설정을 안해주면 빈공간으로 화면에 출력됨
-        else if(effect > 4)
+        else if (effect > 4)
         {
             DestroyObject();
         }
@@ -54,7 +55,7 @@ public class Item1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

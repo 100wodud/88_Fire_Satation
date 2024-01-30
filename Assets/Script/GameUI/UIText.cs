@@ -8,7 +8,7 @@ public class UIText : MonoBehaviour
     public Text Count;
     public Text Mode;
     public Text Time;
-    string n = "5";
+    string n = "2";
     int count = 0;
 
     // Start is called before the first frame update
@@ -19,12 +19,12 @@ public class UIText : MonoBehaviour
             if (GameManager.I.GameLevel == 0)
             {
                 Mode.text = "Easy Mode";
-                n = "5";
+                n = "2";
             }
             else if (GameManager.I.GameLevel == 1)
             {
                 Mode.text = "Normal Mode";
-                n = "10";
+                n = "4";
             }
             else
             {

@@ -66,10 +66,10 @@ public class GameManager : MonoBehaviour
     public void StopTimer() 
     { 
         timerSet = false;
-        if(EasyTime < time & GameLevel == 0)
+        if(EasyTime > time & GameLevel == 0)
         {
             EasyTime = time;
-        } else if(NormalTime < time & GameLevel == 1)
+        } else if(NormalTime > time & GameLevel == 1)
         {
             NormalTime = time;
         } else if(HardTime < time & GameLevel == 2)

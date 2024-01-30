@@ -437,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterFront: {fileID: 843429151}
   water: 0
+  gauge: 0
 --- !u!1 &596861049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1071,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &980958270
 MonoBehaviour:
   m_ObjectHideFlags: 0

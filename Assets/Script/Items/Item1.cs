@@ -18,7 +18,7 @@ public class Item1 : MonoBehaviour
 
     public void DestroyObject()
     {
-        //
+        
         Destroy(gameObject);
     }
 

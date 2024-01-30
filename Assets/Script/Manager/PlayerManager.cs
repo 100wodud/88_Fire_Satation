@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager I;
     private RectTransform rect;
     float water = 0;
-    int gauge = 0;
+    public int gauge = 0;
 
     void Awake()
     {

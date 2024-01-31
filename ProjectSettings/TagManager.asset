@@ -3,17 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Screan
+  - Ground
+  - Object
+  - Water
+  - Oil
+  - Manual
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Object
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Item
+  - Fire
+  - Item1
   - 
   - 
   - 

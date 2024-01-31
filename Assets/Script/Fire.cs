@@ -5,18 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class Fire : MonoBehaviour
 {
+    float speed = -0.0002f;
+    float addSpeed = 0;
+    int gauge = 0;
     // Start is called before the first frame update
     void Start()
     {
         float x = -1f;
         float y = 5f;
         transform.position = new Vector3(x, y, 0);
+
+        if (GameManager.I.GameLevel == 1)
+        {
+            speed = -0.00025f;
+        } else if(GameManager.I.GameLevel == 2)
+        {
+            speed = -0.0003f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, -0.001f, 0);
+        if ((int)(GameManager.I.time / 10) > addSpeed & GameManager.I.GameLevel == 2)
+        {
+            //addSpeed = (int)(GameManager.I.time / 10) * -0.00005f;
+            //Å×½ºÆ®
+            addSpeed = (int)(GameManager.I.time / 10) * -0.01f;
+        }
+        transform.position += new Vector3(0, speed + addSpeed, 0);
+
+        if(PlayerManager.I.gauge > gauge)
+        {
+            gauge = PlayerManager.I.gauge;
+            transform.position += new Vector3(0, 0.1f, 0);
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

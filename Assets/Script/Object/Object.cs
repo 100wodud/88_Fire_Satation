@@ -46,7 +46,7 @@ public class Object : MonoBehaviour
         } else if (GameManager.I.GameLevel == 2 )
         {
             // 시간에 따라서 증가
-            int range = 101 - (timeLevel * 3);
+            int range = 101 - (timeLevel * 2);
             if(range < 20)
             {
                 range = 20;
@@ -54,13 +54,15 @@ public class Object : MonoBehaviour
             color = Random.Range(0, range);
         }
 
-        if (color <= 1 & GameManager.I.GameLevel == 2)
+        if (color <= 2 & GameManager.I.GameLevel == 2)
         {
+            // 즉사 물방울
             Type = 2;
             transform.localScale = new Vector3(0.2f, 0.2f, 1);
-            Render.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            Render.color = new Color(1f, 0f, 0f, 0.5f);
         } else if (color <= 10)
         {
+            // 오일 물방울
             Render.sprite = Oil;
             Type = 1;
             transform.localScale = new Vector3(0.2f, 0.2f, 1);
@@ -73,14 +75,6 @@ public class Object : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //플레이어와 닿을시 메서드
@@ -90,24 +84,18 @@ public class Object : MonoBehaviour
             if (Type == 1) Destroy(gameObject);
             if (Type == 2)
             {
-                ObjectSpawn.AddSpeed += 1f;
                 Destroy(gameObject);
-                GameManager.I.StopTimer();
+                GameManager.I.GameOver();
             }
         }
 
         // 게임 구역을 나가는 경우, 제거
         if (collision.gameObject.tag == "Ground")
         {
-            if (Type == 2)
-            {
-
-            }
             particleObject.Play();
             Render.color = new Color(1f, 1f, 1f, 0f);
             gameObject.tag = "Untagged";
             Invoke("DestroyObject", 0.5f);
-
         }
     }
 

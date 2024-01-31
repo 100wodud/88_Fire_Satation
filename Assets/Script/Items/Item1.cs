@@ -18,6 +18,7 @@ public class Item1 : MonoBehaviour
 
     public void DestroyObject()
     {
+
         Destroy(gameObject);
     }
 
@@ -25,13 +26,18 @@ public class Item1 : MonoBehaviour
     void Start()
     {
         int effect = Random.Range(0, 10);
-        if (effect <= 5)
+        if (effect <= 4)
         {
             float x = Random.Range(-2.5f, 2.5f);
             float y = -4.3f;
             transform.position = new Vector3(x, y, 0f);
             Render1.sprite = SpeedDown;
             Type = 1;
+        }
+        //false 값 설정을 안해주면 빈공간으로 화면에 출력됨
+        else if (effect > 4)
+        {
+            DestroyObject();
         }
         DestroyAfterTime();
     }
@@ -41,7 +47,7 @@ public class Item1 : MonoBehaviour
         //아이템이 작동한다
         GameObject playerObject = GameObject.Find("Player");
         Movement _movement = playerObject.GetComponent<Movement>();
-        _movement.speed -= (int)0.8f;
+        _movement.speed += (int)-1f;
 
         DestroyObject();
     }
@@ -49,7 +55,7 @@ public class Item1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
